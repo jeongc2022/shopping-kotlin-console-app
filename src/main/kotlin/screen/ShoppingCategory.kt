@@ -1,5 +1,7 @@
 package screen
 
+import extentions.getNotEmptyString
+
 class ShoppingCategory {
 
   fun showCategories() {
@@ -10,11 +12,11 @@ class ShoppingCategory {
     }
     println("=> 장바구니로 이동하시려면 #을 입력해주세요")
 
-    var selectedCategory = readLine()
-    while (selectedCategory.isNullOrBlank()) {
-      println("값을 입력해주세요")
-      selectedCategory = readLine()
-    }
+    val selectedCategory = readLine().getNotEmptyString()     //확장 함수로 아래 코드 대체
+//    while (selectedCategory.isNullOrBlank()) {
+//      println("값을 입력해주세요")
+//      selectedCategory = readLine()
+//    }
     if (selectedCategory == "#") {
       // TODO 1. 장바구니 이동
       val shoppingCart = ShoppingCart()
